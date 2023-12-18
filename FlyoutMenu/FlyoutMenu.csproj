@@ -88,7 +88,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Resources\Images\Black\" />
-	  <Folder Include="Resources\Images\ToltekColor\" />
 	</ItemGroup>
 
 </Project>
