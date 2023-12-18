@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FlyoutMenu.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FlyoutMenu" 
+     xmlns:pages="clr-namespace:FlyoutMenu.Pages">
+
+    <!--Flyout Menü Başlığı-->
+    <Shell.FlyoutHeader>
+        <Border>
+            <StackLayout Padding="25" VerticalOptions="Center">
+                <Image Source="user_profile.png" Aspect="AspectFill" HeightRequest="80" WidthRequest="80" />
+                
+                <Label Text="Elif Korkmaz" VerticalTextAlignment="Center" 
+                       HorizontalOptions="Center" VerticalOptions="Center" 
+                       FontSize="20" FontAttributes="Bold" TextColor="Black" Padding="0,10,0,0"/>
+                
+                <Label Text="elifkorkmaz@toltek.com.tr" VerticalTextAlignment="Center" 
+                       HorizontalOptions="Center" VerticalOptions="Center" 
+                       FontSize="14" FontAttributes="Bold" TextColor="Gray" Padding="0,5,0,0"/>
+            </StackLayout>
+        </Border>
+    </Shell.FlyoutHeader>
+    <!--Flyout Menü İçeriği-->
+   <Shell.FlyoutContent>
+        <ScrollView Margin="0" Padding="10" VerticalOptions="Start" >
+            <VerticalStackLayout VerticalOptions="Start">
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                   Padding="10,10,10,15"
+                   ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                        Source="user"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                        Text="Profile"
+                        FontSize="16"/>
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Profile_Tapped"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+                
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                   Padding="10,10,10,15"
+                   ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                        Source="gear"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                        Text="Settings"
+                        FontSize="16"
+                        />
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Settings_Tapped"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+                
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10,10,10,15"
+                     ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                     Source="life_ring"
+                     Aspect="AspectFit"
+                     HeightRequest="25"
+                     WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                     Text="Support"
+                     FontSize="16"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Support_Tapped"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+                
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                    Padding="10,10,10,15"
+                    ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                     Source="right_from_bracket"
+                     Aspect="AspectFit"
+                     HeightRequest="25"
+                     WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                     Text="LogOut"
+                     FontSize="16"/>
+                </Grid>
+            </VerticalStackLayout>
+     </ScrollView>
+ </Shell.FlyoutContent> 
+    <!--TabbedMenü-->
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="ParentRoute">
+        <ShellContent
+      Icon="house.svg"
+      Title="Home"
+      ContentTemplate="{DataTemplate local:MainPage}"
+      Route="MainPage" />
+        <ShellContent
+      Icon="book.svg"
+      Title="Course"
+      ContentTemplate="{DataTemplate pages:Course}"
+      Route="Course" />
+
+        <ShellContent
+      Icon="calendar_empty.svg"
+      Title="Calendar"
+      ContentTemplate="{DataTemplate pages:Calendar}"
+      Route="Calendar" />
+        
+        <ShellContent
+      Icon="bell.svg"
+      Title="Announce"
+      ContentTemplate="{DataTemplate pages:Announce}"
+      Route="Announce" />
+        
+        <ShellContent
+      Icon="clock_rotate_left.svg"
+      Title="Events"
+      ContentTemplate="{DataTemplate pages:Events}"
+      Route="Events" />
+    </FlyoutItem>
+</Shell>
