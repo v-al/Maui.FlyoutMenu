@@ -6,7 +6,7 @@
                Routing.Route="Announce">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Duyurular Sayfası"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
